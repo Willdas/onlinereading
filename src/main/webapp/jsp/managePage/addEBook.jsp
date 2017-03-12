@@ -11,6 +11,8 @@
 <link rel="stylesheet"href="/css/bootstrap/bootstrap.css">
 <script src="/js/jquery/jquery-2.1.0.js"></script>
 <script src="/js/bootstrap/bootstrap.js"></script>
+<script type="text/javascript" src="/js/getProjectRootPath.js"></script>
+<script src="/js/eBook.js"></script>
 <style type="text/css">
 .h3-center{
 	width:20%;
@@ -32,51 +34,61 @@
 			<div class="form-group">
 				<label class="col-sm-2 control-label">书名</label>
 				<div class="col-sm-10">
-					<input class="form-control" id="focusedInput" type="text"
+					<input class="form-control" id="bookName" type="text"
 						placeholder="请输入书名">
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="col-sm-2 control-label">类型</label>
 				<div class="col-sm-10">
-					<input class="form-control" id="focusedInput" type="text"
+					<input class="form-control" id="bookType" type="text"
 						placeholder="请选择类型">
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="col-sm-2 control-label">作者</label>
 				<div class="col-sm-10">
-					<input class="form-control" id="focusedInput" type="text"
+					<input class="form-control" id="author" type="text"
 						placeholder="本书作者">
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="col-sm-2 control-label">价格</label>
 				<div class="col-sm-10">
-					<input class="form-control" id="focusedInput" type="text"
+					<input class="form-control" id="price" type="text"
 						placeholder="本书价格">
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="col-sm-2 control-label">出版日期</label>
 				<div class="col-sm-10">
-					<input class="form-control" id="focusedInput" type="text"
+					<input class="form-control" id="publishDate" type="text"
 						placeholder="请选择出版日期">
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="col-sm-2 control-label">描述</label>
 				<div class="col-sm-10">
-				    <textarea class="form-control" id="focusedInput" rows="3" placeholder="请输入本书的简介"></textarea>
+				    <textarea class="form-control" id="describes" rows="3" placeholder="请输入本书的简介"></textarea>
 				</div>
 			</div>
 			<div class="form-group">
 			    <div class="col-sm-offset-2 col-sm-10">
-			      <button type="submit" class="btn btn-default">提交</button>&emsp;
+			      <button id="addEBook" class="btn btn-default">提交</button>&emsp;
 			      <button type="reset" class="btn btn-default">清空	</button>
 			    </div>
   			</div>
 		</form>
 	</div>
 </body>
+<script type="text/javascript">
+	$(function(){
+		/* 添加电子书 */ 
+		$("#addEBook").click(function(){
+			var url = getLocalhostPaht()+"/eBook/addEBook.do"; 
+			var data = {"bookName":$("#bookName").val(),"bookType":$("#bookType").val(),"author":$("#author").val(),"price":$("#price").val(),"publishDate":$("#publishDate").val(),"describes":$("#describes").val()};
+			addEBook(url,data);
+		});
+	});
+</script>
 </html>

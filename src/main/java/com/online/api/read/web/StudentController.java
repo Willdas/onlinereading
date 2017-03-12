@@ -1,4 +1,4 @@
-package com.online.api.read.controller;
+package com.online.api.read.web;
 
 import java.util.List;
 
