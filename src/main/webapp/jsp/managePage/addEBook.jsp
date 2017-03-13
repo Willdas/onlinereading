@@ -40,12 +40,13 @@
 			<div class="form-group">
 				  <label for="basic" class="col-lg-2 control-label">类型</label>
 				  <div class="col-lg-10">
-				    <select id="basic" class="selectpicker show-tick form-control" data-live-search="true">
-				      <option>cow1</option>
-				      <option>cow2</option>
-				      <option>cow3</option>
-				      <option>cow4</option>
-				      <option>cow5</option>
+				    <select id="selectType" class="selectpicker show-tick form-control" data-live-search="true">
+					      <option>请选择类型</option>
+					      <option>JAVA</option>
+					      <option>HTML</option>
+					      <option>CSS</option>
+					      <option>JavaScript</option>
+					      <option>PHP</option>
 				    </select>
 				  </div>
 			</div>
@@ -81,7 +82,7 @@
 				<div class="col-sm-offset-2 col-sm-10">
 					<button id="addEBook" class="btn btn-default">提交</button>
 					&emsp;
-					<button type="reset" class="btn btn-default">清空</button>
+					<button id="reset" class="btn btn-default">清空</button>
 				</div>
 			</div>
 		</div>

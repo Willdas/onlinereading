@@ -10,10 +10,15 @@
 <script type="text/javascript" src="/js/getProjectRootPath.js"></script>
 </head>
 <script type="text/javascript">
-	// 进入添加电子书页面
-	function addUrl(obj){
+	/* 添加电子书 */ 
+	function addEBook(obj){
 		var addUrl = getRootPath()+"/managePage/addEBook.jsp";
 		obj.href = addUrl;
+	}
+	/* 显示电子书 */
+	function showEBook(obj){
+		var showUrl = getRootPath()+"/managePage/showEBooks.jsp";
+		obj.href = showUrl;
 	}
 </script>
 <body>
@@ -46,9 +51,8 @@
 						<span></span>书籍管理
 					</h4>
 					<div class="list-item none">
-						<a href='javascript:void(0)' onclick="addUrl(this)" target="content">添加电子书</a> 
-						<a href=''>编辑电子书</a>  
-						<a href=''>删除电子书</a>
+						<a href='javascript:void(0)' onclick="addEBook(this)" target="content">添加电子书</a> 
+						<a href='javascript:void(0)' onclick="showEBook(this)" target="content">查看电子书</a> 
 					</div>
 				</li>
 				<li>

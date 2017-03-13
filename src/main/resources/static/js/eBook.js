@@ -6,7 +6,7 @@ $(function(){
 			url : getLocalhostPaht()+"/eBook/addEBook?",
 			data : {
 				"bookName":$("#bookName").val(),
-				"bookType":$("#bookType").val(),
+				"bookType":$("#selectType").val(),
 				"author":$("#author").val(),
 				"price":$("#price").val(),
 				"publishDate":$("#publishDate").val(),
@@ -25,6 +25,14 @@ $(function(){
 		});
 	});
 	
+	// 清空
+	$("#reset").on('click',function(){
+		history.go(0);
+		$("input[type='text']").val("");
+		$("#describes").val("");
+	});
+	
+ 
 	
 });
 
