@@ -8,29 +8,28 @@
 <!-- <link rel="stylesheet"href="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
-<link rel="stylesheet"href="/css/bootstrap/bootstrap.css">
-<script src="/js/jquery/jquery-2.1.0.js"></script>
-<script src="/js/bootstrap/bootstrap.js"></script>
-<script type="text/javascript" src="/js/getProjectRootPath.js"></script>
-<script src="/js/eBook.js"></script>
+<link rel="stylesheet" href="/css/bootstrap/bootstrap.css">
+<link rel="stylesheet" href="/css/bootstrap/bootstrap-select.css">
+<link type="text/css" rel="stylesheet" href="/css/jedate/jedate.css">
 <style type="text/css">
-.h3-center{
-	width:20%;
-	height:30%;
+.h3-center {
+	width: 20%;
+	height: 30%;
 	margin: 0 auto;
-	margin-top:15px;
+	margin-top: 15px;
 }
-.div-top{
-	margin-top:10px;
-	margin-left:15%;
-	margin-right:0%;
+
+.div-top {
+	margin-top: 10px;
+	margin-left: 15%;
+	margin-right: 0%;
 }
 </style>
 </head>
 <body>
 	<h3 class="h3-center">添加电子书</h3>
 	<div class="div-top">
-		<form class="form-horizontal" role="form">
+		<div class="form-horizontal" role="form">
 			<div class="form-group">
 				<label class="col-sm-2 control-label">书名</label>
 				<div class="col-sm-10">
@@ -39,11 +38,16 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="col-sm-2 control-label">类型</label>
-				<div class="col-sm-10">
-					<input class="form-control" id="bookType" type="text"
-						placeholder="请选择类型">
-				</div>
+				  <label for="basic" class="col-lg-2 control-label">类型</label>
+				  <div class="col-lg-10">
+				    <select id="basic" class="selectpicker show-tick form-control" data-live-search="true">
+				      <option>cow1</option>
+				      <option>cow2</option>
+				      <option>cow3</option>
+				      <option>cow4</option>
+				      <option>cow5</option>
+				    </select>
+				  </div>
 			</div>
 			<div class="form-group">
 				<label class="col-sm-2 control-label">作者</label>
@@ -69,26 +73,34 @@
 			<div class="form-group">
 				<label class="col-sm-2 control-label">描述</label>
 				<div class="col-sm-10">
-				    <textarea class="form-control" id="describes" rows="3" placeholder="请输入本书的简介"></textarea>
+					<textarea class="form-control" id="describes" rows="3"
+						placeholder="请输入本书的简介"></textarea>
 				</div>
 			</div>
 			<div class="form-group">
-			    <div class="col-sm-offset-2 col-sm-10">
-			      <button id="addEBook" class="btn btn-default">提交</button>&emsp;
-			      <button type="reset" class="btn btn-default">清空	</button>
-			    </div>
-  			</div>
-		</form>
+				<div class="col-sm-offset-2 col-sm-10">
+					<button id="addEBook" class="btn btn-default">提交</button>
+					&emsp;
+					<button type="reset" class="btn btn-default">清空</button>
+				</div>
+			</div>
+		</div>
 	</div>
 </body>
+<script src="/js/jquery/jquery-2.1.0.js"></script>
+<script src="/js/bootstrap/bootstrap.js"></script>
+<script type="text/javascript" src="/js/getProjectRootPath.js"></script>
+<script type="text/javascript" src="/js/jedate/jquery.jedate.js"></script>
+<script src="/js/bootstrap/bootstrap-select.js"></script>
+<script src="/js/eBook.js"></script>
+<!-- 日期控件 -->
 <script type="text/javascript">
-	$(function(){
-		/* 添加电子书 */ 
-		$("#addEBook").click(function(){
-			var url = getLocalhostPaht()+"/eBook/addEBook.do"; 
-			var data = {"bookName":$("#bookName").val(),"bookType":$("#bookType").val(),"author":$("#author").val(),"price":$("#price").val(),"publishDate":$("#publishDate").val(),"describes":$("#describes").val()};
-			addEBook(url,data);
-		});
-	});
+	$("#publishDate").jeDate({
+		skinCell : "jedategreen",
+		format : "YYYY-MM-DD",
+		isTime : false,
+		zIndex : 100,
+		minDate : "1990-01-01 00:00:00"
+	})
 </script>
 </html>

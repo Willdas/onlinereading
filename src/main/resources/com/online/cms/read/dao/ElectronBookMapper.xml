@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.online.api.read.dao.ElectronBookMapper" >
-  <resultMap id="BaseResultMap" type="com.online.api.read.domain.ElectronBook" >
+<mapper namespace="com.online.cms.read.dao.ElectronBookMapper" >
+  <resultMap id="BaseResultMap" type="com.online.cms.read.domain.ElectronBook" >
     <id column="id" property="id" jdbcType="VARCHAR" />
     <result column="book_name" property="bookName" jdbcType="VARCHAR" />
     <result column="author" property="author" jdbcType="VARCHAR" />
@@ -71,7 +71,7 @@
   <sql id="Base_Column_List" >
     id, book_name, author, describes, publish_date, type, price
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.online.api.read.domain.ElectronBookCriteria" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.online.cms.read.domain.ElectronBookCriteria" >
     select
     <if test="distinct" >
       distinct
@@ -95,13 +95,13 @@
     delete from books
     where id = #{id,jdbcType=VARCHAR}
   </delete>
-  <delete id="deleteByExample" parameterType="com.online.api.read.domain.ElectronBookCriteria" >
+  <delete id="deleteByExample" parameterType="com.online.cms.read.domain.ElectronBookCriteria" >
     delete from books
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.online.api.read.domain.ElectronBook" >
+  <insert id="insert" parameterType="com.online.cms.read.domain.ElectronBook" >
     insert into books (id, book_name, author, 
       describes, publish_date, type, 
       price)
@@ -109,7 +109,7 @@
       #{describes,jdbcType=VARCHAR}, #{publishDate,jdbcType=DATE}, #{type,jdbcType=VARCHAR}, 
       #{price,jdbcType=DOUBLE})
   </insert>
-  <insert id="insertSelective" parameterType="com.online.api.read.domain.ElectronBook" >
+  <insert id="insertSelective" parameterType="com.online.cms.read.domain.ElectronBook" >
     insert into books
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -158,7 +158,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.online.api.read.domain.ElectronBookCriteria" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.online.cms.read.domain.ElectronBookCriteria" resultType="java.lang.Integer" >
     select count(*) from books
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -206,7 +206,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.online.api.read.domain.ElectronBook" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.online.cms.read.domain.ElectronBook" >
     update books
     <set >
       <if test="bookName != null" >
@@ -230,7 +230,7 @@
     </set>
     where id = #{id,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.online.api.read.domain.ElectronBook" >
+  <update id="updateByPrimaryKey" parameterType="com.online.cms.read.domain.ElectronBook" >
     update books
     set book_name = #{bookName,jdbcType=VARCHAR},
       author = #{author,jdbcType=VARCHAR},
@@ -240,7 +240,7 @@
       price = #{price,jdbcType=DOUBLE}
     where id = #{id,jdbcType=VARCHAR}
   </update>
-  <select resultMap="BaseResultMap" parameterType="com.online.api.read.domain.ElectronBookCriteria" id="selectByExampleWithRowbounds" >
+  <select resultMap="BaseResultMap" parameterType="com.online.cms.read.domain.ElectronBookCriteria" id="selectByExampleWithRowbounds" >
     select
     <if test="distinct" >
       distinct

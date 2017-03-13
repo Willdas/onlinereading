@@ -1,4 +1,4 @@
-package com.online.api.read.domain;
+package com.online.cms.read.domain;
 
 import java.io.Serializable;
 import java.util.Date;

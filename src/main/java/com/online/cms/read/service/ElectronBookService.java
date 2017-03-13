@@ -1,6 +1,6 @@
-package com.online.api.read.service;
+package com.online.cms.read.service;
 
-import com.online.api.read.domain.ElectronBook;
+import com.online.cms.read.domain.ElectronBook;
 import com.online.commons.service.BaseService;
 
 /**

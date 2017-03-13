@@ -17,7 +17,12 @@ import org.springframework.web.servlet.DispatcherServlet;
 @EnableAutoConfiguration
 //关闭自动配置   该注解包含以上三种
 //@SpringBootApplication(exclude= {DataSourceAutoConfiguration.class})
-public class Application{
+public class Application extends DispatcherServlet{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	/**
 	 * 拦截访问.do
@@ -28,8 +33,8 @@ public class Application{
     public ServletRegistrationBean dispatcherRegistration(DispatcherServlet dispatcherServlet) {
         ServletRegistrationBean registration = new ServletRegistrationBean(dispatcherServlet);
         registration.getUrlMappings().clear();
-        registration.addUrlMappings("/");
-        registration.addUrlMappings("*.do");
+        //registration.addUrlMappings("/");
+        registration.addUrlMappings("/eBook");
         return registration;
     }
 	

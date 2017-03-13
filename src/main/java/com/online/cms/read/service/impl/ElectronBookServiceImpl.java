@@ -1,4 +1,4 @@
-package com.online.api.read.service.impl;
+package com.online.cms.read.service.impl;
 
 import java.util.List;
 
@@ -9,9 +9,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.github.pagehelper.PageInfo;
-import com.online.api.read.dao.ElectronBookMapper;
-import com.online.api.read.domain.ElectronBook;
-import com.online.api.read.service.ElectronBookService;
+import com.online.cms.read.dao.ElectronBookMapper;
+import com.online.cms.read.domain.ElectronBook;
+import com.online.cms.read.service.ElectronBookService;
 import com.online.commons.dao.BaseDao;
 import com.online.commons.service.impl.BaseServiceImpl;
 
