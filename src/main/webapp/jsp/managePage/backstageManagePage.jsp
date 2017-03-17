@@ -17,14 +17,9 @@
 <script type="text/javascript">
 	/* 添加电子书 */ 
 	function addEBook(obj){
-		var addUrl = getRootPath()+"/jsp/managePage/addEBook.jsp";
+		var addUrl = getLocalhostPaht()+"/jsp/managePage/addEBook.jsp";
 		obj.href = addUrl;
 	}	
-	/* 显示电子书 */
-	function showEBook(obj){
-		var showUrl = "http://localhost:8080/online/getEBookById/2132313"; 
-		obj.href = showUrl;
-	}
 </script>
 <body>
 	<div class="top"></div>
@@ -57,7 +52,6 @@
 					</h4>
 					<div class="list-item none">
 						<a href='javascript:void(0)' onclick="addEBook(this)" target="content">添加电子书</a> 
-						<a href='javascript:void(0)' onclick="showEBook(this)" target="content">查看电子书</a> 
 					</div>
 				</li>
 				<li>

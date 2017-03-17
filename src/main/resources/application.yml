@@ -30,7 +30,6 @@ spring:
             prefix: /WEB-INF/jsp/
             suffix: .jsp
 
-
 # MyBatis
 mybatis:
     typeAliasesPackage: com.online.cms.**.domain
@@ -41,9 +40,3 @@ mybatis:
 logging:
     level:
        com.ibatis:DEBUG
-
-pagehelper:
-    helperDialect: mysql
-    reasonable: true
-    supportMethodsArguments: true
-    params: count=countSql

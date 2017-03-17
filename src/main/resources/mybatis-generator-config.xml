@@ -68,6 +68,6 @@
 		</javaClientGenerator>
 
 		<!-- 配置表信息 -->
-		<table schema="onlineread" tableName="books" domainObjectName="ElectronBook" />
+		<table schema="book" tableName="books" domainObjectName="ElectronBook" />
 	</context>
 </generatorConfiguration>  

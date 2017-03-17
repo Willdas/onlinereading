@@ -3,6 +3,9 @@ package com.online.cms.read.domain;
 import java.io.Serializable;
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.NumberFormat;
+
 import com.online.commons.domain.AbstractEntity;
 
 public class ElectronBook extends AbstractEntity implements Serializable {
@@ -14,10 +17,12 @@ public class ElectronBook extends AbstractEntity implements Serializable {
 
     private String describes;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date publishDate;
 
     private String type;
 
+    @NumberFormat(pattern = "##.##")
     private Double price;
 
     private static final long serialVersionUID = 1L;
