@@ -1,28 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-<%
-	String ipPath = request.getScheme() + "://"+ request.getServerName() + ":" + request.getServerPort();
-	String path = request.getContextPath();
-	String basePath = ipPath + path + "/";
-%>
 <!DOCTYPE>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>后台内容管理系统</title>
-<link type="text/css" rel="stylesheet" href="<%=basePath%>css/style.css" />
-<script type="text/javascript" src="<%=basePath%>js/jquery/jquery-2.1.0.js"></script>
-<script type="text/javascript" src="<%=basePath%>js/menu.js"></script>
-<script type="text/javascript" src="<%=basePath%>js/getProjectRootPath.js"></script>
+<link type="text/css" rel="stylesheet" href="/css/style.css" />
+<script type="text/javascript" src="/js/jquery/jquery-2.1.0.js"></script>
+<script type="text/javascript" src="/js/menu.js"></script>
+<script type="text/javascript" src="/js/getProjectRootPath.js"></script>
 </head>
 <script type="text/javascript">
 	/* 添加电子书 */ 
 	function addEBook(obj){
-		var addUrl = getRootPath()+"/jsp/managePage/addEBook.jsp";
+		var addUrl = getRootPath()+"/managePage/addEBook.jsp";
 		obj.href = addUrl;
-	}	
+	}
 	/* 显示电子书 */
 	function showEBook(obj){
-		var showUrl = "http://localhost:8080/online/getEBookById/2132313"; 
+		var showUrl = getRootPath()+"/managePage/showEBooks.jsp";
 		obj.href = showUrl;
 	}
 </script>

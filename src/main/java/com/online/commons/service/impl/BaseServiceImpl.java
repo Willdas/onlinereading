@@ -48,7 +48,7 @@ public abstract class BaseServiceImpl<T extends AbstractEntity> implements BaseS
 	@Override
 	public T save(T entity) {
 		Assert.notNull(entity);
-		if (entity.getId() == null) {
+		if (findOne(entity.getId()) == null) {
 			create(entity);
 		} else {
 			update(entity);

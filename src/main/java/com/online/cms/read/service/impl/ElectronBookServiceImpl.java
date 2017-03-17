@@ -36,4 +36,5 @@ public class ElectronBookServiceImpl extends BaseServiceImpl<ElectronBook> imple
 		return electronBookDao;
 	}
 
+
 }

@@ -2,16 +2,15 @@
     pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 <%
-	String ipPath = request.getScheme() + "://"+ request.getServerName() + ":" + request.getServerPort();
-	String path = request.getContextPath();
-	String basePath = ipPath + path + "/";
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8"> 
 <title>Bootstrap 实例 - 边框表格</title>
-<link rel="stylesheet" href="<%=basePath%>css/bootstrap/bootstrap.css">
+<link rel="stylesheet" href="/css/bootstrap/bootstrap.css">
 <style type="text/css">
 .caption-class {
 	width: 20%;
@@ -59,6 +58,6 @@
 	</tbody>
 </table>
 </body>
-<script src="<%=basePath%>js/jquery/jquery-2.1.0.js"></script>
-<script src="<%=basePath%>js/bootstrap/bootstrap.js"></script>
+<script src="/js/jquery/jquery-2.1.0.js"></script>
+<script src="/js/bootstrap/bootstrap.js"></script>
 </html>

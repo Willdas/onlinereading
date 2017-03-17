@@ -1,21 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
-<%
-	String ipPath = request.getScheme() + "://"+ request.getServerName() + ":" + request.getServerPort();
-	String path = request.getContextPath();
-	String basePath = ipPath + path + "/";
-%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>添加电子书</title>
-<link rel="stylesheet"href="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- <link rel="stylesheet"href="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="<%=basePath%>css/bootstrap/bootstrap.css">
-<link rel="stylesheet" href="<%=basePath%>css/bootstrap/bootstrap-select.css">
-<link type="text/css" rel="stylesheet" href="<%=basePath%>css/jedate/jedate.css">
+<script src="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+<link rel="stylesheet" href="/css/bootstrap/bootstrap.css">
+<link rel="stylesheet" href="/css/bootstrap/bootstrap-select.css">
+<link type="text/css" rel="stylesheet" href="/css/jedate/jedate.css">
 <style type="text/css">
 .h3-class {
 	width: 20%;
@@ -100,12 +95,12 @@
 		</div>
 	</div>
 </body>
-<script src="<%=basePath%>js/jquery/jquery-2.1.0.js"></script>
-<script src="<%=basePath%>js/bootstrap/bootstrap.js"></script>
-<script type="text/javascript" src="<%=basePath%>js/getProjectRootPath.js"></script>
-<script type="text/javascript" src="<%=basePath%>js/jedate/jquery.jedate.js"></script>
-<script src="<%=basePath%>js/bootstrap/bootstrap-select.js"></script>
-<script src="<%=basePath%>js/eBook.js"></script>
+<script src="/js/jquery/jquery-2.1.0.js"></script>
+<script src="/js/bootstrap/bootstrap.js"></script>
+<script type="text/javascript" src="/js/getProjectRootPath.js"></script>
+<script type="text/javascript" src="/js/jedate/jquery.jedate.js"></script>
+<script src="/js/bootstrap/bootstrap-select.js"></script>
+<script src="/js/eBook.js"></script>
 <!-- 日期控件 -->
 <script type="text/javascript">
 	$("#publishDate").jeDate({

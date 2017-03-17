@@ -76,6 +76,11 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		<!-- <dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-starter-tomcat</artifactId>
+	        <scope>provided</scope>
+		</dependency> -->
 		<dependency>
 			<groupId>org.apache.tomcat.embed</groupId>
 			<artifactId>tomcat-embed-jasper</artifactId>
@@ -87,12 +92,17 @@
 	      <version>3.8.1</version>
 	      <scope>test</scope>
 	    </dependency>
-	    <!-- java.servlet -->
+	    <!-- servlet -->
 	    <dependency>
 		    <groupId>javax.servlet</groupId>
 		    <artifactId>javax.servlet-api</artifactId>
 		    <version>3.1.0</version>
 		</dependency>
+		<!--jsp jstl的支持-->  
+        <dependency>  
+            <groupId>javax.servlet</groupId>  
+            <artifactId>jstl</artifactId>  
+        </dependency> 
 		<!-- myBatis -->
 		<dependency>
 			<groupId>org.mybatis</groupId>

@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,7 +24,7 @@ import com.online.commons.util.UniversalPage;
  * @author willdas
  *
  */
-@RestController
+@Controller
 @RequestMapping("/eBook")
 public class ElectronBookController {
 	/**
@@ -43,6 +44,7 @@ public class ElectronBookController {
 	 */
 	@RequestMapping("/page/getEBooks")
 	public String getEBook(Integer pageNum,Integer pageSize,Map<String,Object> map){
+		System.out.println("sssss");
 		pageNum = pageNum == null ? 1 : pageNum;
 		pageSize = pageSize == null ? 10 : pageSize;
 		PageHelper.startPage(pageNum,pageSize);
@@ -56,17 +58,15 @@ public class ElectronBookController {
 		System.out.println(eBookPage.getPageNum());
 		System.out.println(eBookPage.getList());
 
-		return "managePage/showEBooks";
+		return "jsp/managePage/showEBooks.jspmanagePage/showEBooks.jsp";
 		
 	}
 	
 	@RequestMapping(value="/getEBookById/{id}")
-	public String getEBookById(@PathVariable("id") String id){
-		
-		electroBookService.findOne(id);
+	public String getEBookById(@PathVariable String id){
+		ElectronBook eBook = electroBookService.findOne(id);
+		System.out.println(eBook);
 		return "";
-		
-		
 	}
 	
 	
@@ -79,19 +79,22 @@ public class ElectronBookController {
 	public int addEBook(HttpServletRequest request){
 		int count = 0;
 		try {
+			String bookNum = request.getParameter("id");
 			String bookName = request.getParameter("bookName");
-			String type = request.getParameter("bookType");
+			String type = request.getParameter("type");
 			String author = request.getParameter("author");
 			String price = request.getParameter("price");
 			String publishDate = request.getParameter("publishDate");
 			String describes = request.getParameter("describes");
 			ElectronBook electroBook = new ElectronBook();
+			electroBook.setId(bookNum);
 			electroBook.setBookName(bookName);
 			electroBook.setType(type);
 			electroBook.setAuthor(author);
-			electroBook.setPrice(Double.valueOf(price));
 			electroBook.setPublishDate(DateFormat.stringToDate(publishDate));
 			electroBook.setDescribe(describes);
+			electroBook.setPrice(Double.valueOf(price));
+			electroBook.setPublishDate(DateFormat.stringToDate(publishDate));
 			ElectronBook eBook = electroBookService.save(electroBook);
 			if(eBook != null){
 				count = 1;

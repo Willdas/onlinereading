@@ -1,13 +1,13 @@
 # Server settings
 server:
-    port:80
-    address:localhost
+    port: 8080
+    address: localhost
 
 # DATASOURCE
 jdbc:
     dataSourceClassName: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
-    url: jdbc:mysql://localhost:3306/onlineread?useUnicode=true&amp;charaterEncoding=utf-8
-    databaseName: onlineread
+    url: jdbc:mysql://localhost:3306/book?useUnicode=true&amp;charaterEncoding=utf-8
+    databaseName: book
     serverName: 127.0.0.1
     username: root
     password: 123456
@@ -23,6 +23,13 @@ spring:
         encoding.charset: UTF-8
         encoding.enable: true
         encoding.force: true
+    resources:
+         static-locations: classpath:/static/
+    mvc:
+      view:
+            prefix: /WEB-INF/jsp/
+            suffix: .jsp
+
 
 # MyBatis
 mybatis:
